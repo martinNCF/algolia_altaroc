@@ -1,0 +1,234 @@
+.hidden {
+  display: none;
+}
+
+.ais-InfiniteHits-list {
+  display: contents; /* Cela permet aux éléments enfants de respecter la grille du parent */
+}
+
+.ais-InfiniteHits-item {
+  /* Supprimez les styles qui pourraient interférer avec la mise en page en grille */
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.videoCardCover {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+  width: 100%; /* Assurez-vous que l'image prend toute la largeur */
+}
+
+.videoCoverContainer {
+  position: relative;
+}
+
+.videoTime,
+.numberOfEpisodes {
+  background-color: #c3fbf6;
+  color: #0a3737;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 7px;
+}
+
+.seriesCoverContainer {
+  position: relative;
+  padding-top: 8px;
+  padding-left: 8px;
+  background-image: url(https://cdn.prod.website-files.com/66cd8b365187b99f8a75e250/66d04519398b57ae7a016b00_seriesPlaceholder.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Styles pour les autres types de résultats */
+#hitsRessources .ais-InfiniteHits-list,
+#societesHits .ais-InfiniteHits-list,
+#gerantsHits .ais-InfiniteHits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#hitsRessources .ais-InfiniteHits-item,
+#societesHits .ais-InfiniteHits-item,
+#gerantsHits .ais-InfiniteHits-item {
+  padding-top: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#seriesHits .ais-InfiniteHits-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /* Espacement entre les cartes */
+}
+
+#videoHits .ais-InfiniteHits-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /* Espacement entre les cartes */
+}
+
+.inlineflex-spacebet-bot {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.link-block {
+  color: inherit !important;
+  font-style: normal !important;
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.clamp-3lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+/* Styles pour le bouton "Afficher plus" */
+.custom-button.load-more-button {
+  background-color: #093737;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 400px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  padding-right: 40px;
+}
+
+.custom-button.load-more-button:hover {
+  background-color: #265f5f;
+}
+
+.custom-button.load-more-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(49, 121, 121, 0.5);
+}
+
+.custom-button.load-more-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.custom-button.load-more-button::after {
+  content: "↓";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+/* Styles pour les filtres */
+.btn-algolia-filter {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1e2b2b;
+  text-transform: uppercase;
+  border-radius: 500px;
+  border: 1px solid #d7e0df;
+  padding: 8px 16px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-algolia-filter.active {
+  border: 1px solid #1e2b2b;
+}
+
+/* Styles pour la barre de recherche */
+.custom-searchbox {
+  position: relative;
+}
+
+.custom-searchbox::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 21L17.5001 17.5M20 11.5C20 16.1944 16.1944 20 11.5 20C6.80558 20 3 16.1944 3 11.5C3 6.80558 6.80558 3 11.5 3C16.1944 3 20 6.80558 20 11.5Z" stroke="%23317979" stroke-width="2" stroke-linecap="square"/></svg>')
+    no-repeat center center;
+}
+
+.ais-SearchBox-form {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  height: 56px;
+  border: 1px solid #d7e0df;
+  border-radius: 8px;
+  padding: 0 16px 0 40px;
+  gap: 8px;
+  font-size: 16px;
+  color: #6d7978;
+  width: 100%;
+  font-style: normal;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.ais-SearchBox-input {
+  width: 100%;
+  border: none;
+  height: 100%;
+}
+
+.ais-SearchBox-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-searchbox .ais-SearchBox-reset {
+  border: 1px solid #9dafaf;
+  border-radius: 9999px;
+  color: #093737;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 16px;
+  background-color: transparent;
+  cursor: pointer;
+  height: 40px;
+}
+
+.custom-searchbox .ais-SearchBox-reset::before {
+  content: "Effacer";
+}
+
+.custom-searchbox .ais-SearchBox-reset svg {
+  display: none;
+}
